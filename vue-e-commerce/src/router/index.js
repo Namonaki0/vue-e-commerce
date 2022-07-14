@@ -1,17 +1,29 @@
 import { createWebHistory, createRouter } from "vue-router";
-import HomeComponent from "../views/HomeComponent.vue";
-import CartComponent from "../views/CartComponent.vue";
+import Home from "../views/Home.vue";
+import NewIn from "../views/NewIn.vue";
+import Categories from "../views/Categories.vue";
+import Cart from "../views/Cart.vue";
 
 const routes = [
   {
     path: "/",
-    name: "HomeComponent",
-    component: HomeComponent,
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/new-in",
+    name: "NewIn",
+    component: NewIn,
+  },
+  {
+    path: "/categories",
+    name: "Categories",
+    component: Categories,
   },
   {
     path: "/cart",
-    name: "CartComponent",
-    component: CartComponent,
+    name: "Cart",
+    component: Cart,
   },
 ];
 

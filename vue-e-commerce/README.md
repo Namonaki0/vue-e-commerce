@@ -1,24 +1,4 @@
 # vue-e-commerce
 
-## Project setup
-```
-npm install
-```
+## An e-commerce project that features dynamic routes (vue router), Vuex for state-management and TailwindCSS for styling.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
