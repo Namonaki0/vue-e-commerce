@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Home from "../views/Home.vue";
-import NewIn from "../views/NewIn.vue";
-import Categories from "../views/Categories.vue";
-import Cart from "../views/Cart.vue";
+import Home from "@/views/Home.vue";
+import NewIn from "@/views/NewIn.vue";
+import Categories from "@/views/Categories.vue";
+import Cart from "@/views/Cart.vue";
 
 const routes = [
   {
