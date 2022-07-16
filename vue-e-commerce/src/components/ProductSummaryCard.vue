@@ -1,6 +1,8 @@
 <template>
-    <div class="product-card">
-        <img :src="productImage" />
+    <div class="product-card mx-4 bg-slate-300 mb-2 py-4 px-2">
+        <div class="product-image-container p-2">
+            <img :src="productImage" />
+        </div>
         <h2>{{ product.name }}</h2>
         <p class="product-description">DESCRIPTION: {{ productDescription }}</p>
         <p class="product-category">CATEGORY: {{ product.category }}</p>
