@@ -3,11 +3,9 @@
     <h2>Home</h2>
 
     <div class="products-card-container">
-      <ProductSummaryCard 
-        v-for="(product, index) in products" 
-        :key="index"
-        :product="product"
-        />
+      <ProductSummaryCard v-for="product in products" :key="product.id" :product="product"
+        v-on:view-product="viewProduct($event)" />
+      <ProductDisplayDrawer :product="product" :active="active.product_drawer"/>
 
     </div>
   </div>
@@ -17,19 +15,31 @@
 
 import products from '@/data/products'
 import ProductSummaryCard from '@/components/ProductSummaryCard.vue'
+import ProductDisplayDrawer from "@/components/ProductDisplayDrawer.vue"
 
 export default {
   name: 'HomeComponent',
 
   components: {
-    ProductSummaryCard
+    ProductSummaryCard,
+    ProductDisplayDrawer
   },
 
   data() {
     return {
-      products: products
+      products: products,
+      product: null,
+      active: {
+        product_drawer: true
+      }
     }
-}
+},
+  methods: {
+    viewProduct(product) {
+      this.product = product
+      this.active.product_drawer = true
+    }
+  },
 }
 
 

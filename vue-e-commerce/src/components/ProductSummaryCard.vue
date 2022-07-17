@@ -7,6 +7,7 @@
         <p class="product-description">DESCRIPTION: {{ productDescription }}</p>
         <p class="product-category">CATEGORY: {{ product.category }}</p>
         <span class="product-price">PRICE: £{{ product.price.toFixed(2) }}</span>
+        <button class="block p-2 mt-4 mb-2 max-auto m-auto text-white w-1/2 bg-black" @click="$emit('view-product', product)">view product</button>
     </div>
 
 </template>
