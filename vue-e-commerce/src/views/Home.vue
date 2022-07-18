@@ -5,7 +5,8 @@
     <div class="products-card-container">
       <ProductSummaryCard v-for="product in products" :key="product.id" :product="product"
         v-on:view-product="viewProduct($event)" />
-      <ProductDisplayDrawer :product="product" :active="active.product_drawer"/>
+      <ProductDisplayDrawer :product="product" :active="active.product_drawer"
+        v-on:close-product-drawer="closeProductDrawer()" />
 
     </div>
   </div>
@@ -30,7 +31,7 @@ export default {
       products: products,
       product: null,
       active: {
-        product_drawer: true
+        product_drawer: false
       }
     }
 },
@@ -38,6 +39,9 @@ export default {
     viewProduct(product) {
       this.product = product
       this.active.product_drawer = true
+    },
+    closeProductDrawer() {
+      this.active.product_drawer = false
     }
   },
 }

@@ -1,11 +1,14 @@
 <template>
-    <div class="product-drawer-background" :class="{show: active}" @click="$emit('close-product-drawer')"/>
+    <div class="product-drawer-background" :class="{show: active}" @click="$emit('close-product-drawer')" />
 
     <div class="product-drawer" :class="{show: active}">
-        <div class="close-product-drawer" @click="$emit('close-product-drawer')">
-            X
+        <div class="close-product-drawer">
+            <span class="close-product-drawer-icon" @click="$emit('close-product-drawer')">
+                X
+            </span>
         </div>
         <div v-if="product" class="product-details">
+            <img :src="product.image" />
             <h2>{{product.name}}</h2>
             <p>{{product.description}}</p>
             <p>{{product.price.toFixed(2)}}</p>
@@ -26,14 +29,19 @@
 export default {
     props: ["product", "active"],
     computed: {
-        product_total() {
+        product_count() {
             return 1000
         }
+        
     }
 }
 </script>
 
 <style scoped>
+
+
+
+
 
 .product-drawer-background {
     display: none;
@@ -66,5 +74,18 @@ export default {
 .product-drawer.show {
     left: 0;
 }
+
+.close-product-drawer {
+    background: #1c1c1c;
+    text-align: right;
+    padding: .1rem 1rem;
+    font-size: 2rem;
+}
+
+.close-product-drawer-icon {
+    color: white;
+    cursor: pointer;
+}
+
 
 </style>
