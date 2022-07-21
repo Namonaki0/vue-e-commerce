@@ -12,13 +12,16 @@
             <h2>{{product.name}}</h2>
             <p>{{product.description}}</p>
             <p>{{product.price.toFixed(2)}}</p>
-            <div class="cart-total">
+
+            <div class="cart-total" v-if="product_count">
                 <h3>Quantity</h3>
                 <h4>{{product_count}}</h4>
             </div>
             <div class="buttons-container">
-                <button class="add-item">add</button>
-                <button class="remove-item">remove</button>
+                <button class="add-item p-2 m-2 max-auto m-auto text-white bg-black"
+                    @click="addToCart()">add</button>
+                <button
+                    class="remove-item p-2 m-2 max-auto m-auto text-white bg-black">remove</button>
             </div>
         </div>
     </div>
@@ -28,9 +31,15 @@
 
 export default {
     props: ["product", "active"],
+    methods: {
+        addToCart() {
+            this.$store.commit("addToCart", this.product)
+            console.log(this.product)
+        }
+    },
     computed: {
         product_count() {
-            return 1000
+            return this.$store.getters.productQuantity(this.product)
         }
         
     }
