@@ -7,7 +7,7 @@
                 X
             </span>
         </div>
-        <div v-if="product" class="product-details">
+        <div class="product-details" v-if="product">
             <img :src="product.image" />
             <h2>{{product.name}}</h2>
             <p>{{product.description}}</p>
@@ -18,10 +18,8 @@
                 <h4>{{product_count}}</h4>
             </div>
             <div class="buttons-container">
-                <button class="add-item p-2 m-2 max-auto m-auto text-white bg-black"
-                    @click="addToCart()">add</button>
-                <button
-                    class="remove-item p-2 m-2 max-auto m-auto text-white bg-black">remove</button>
+                <button class="add-item p-2 m-2 max-auto m-auto text-white bg-black" @click="addToCart()">add</button>
+                <button class="remove-item p-2 m-2 max-auto m-auto text-white bg-black">remove</button>
             </div>
         </div>
     </div>
@@ -34,7 +32,6 @@ export default {
     methods: {
         addToCart() {
             this.$store.commit("addToCart", this.product)
-            console.log(this.product)
         }
     },
     computed: {
